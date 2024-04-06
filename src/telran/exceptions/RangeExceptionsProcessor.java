@@ -1,15 +1,15 @@
 package telran.exceptions;
 
 public class RangeExceptionsProcessor {
-	private RangeExceptions rangeExceptions;
-	private int counterGreaterMax;
-	private int counterLessMin;
-	private int counterRange;
-	public RangeExceptionsProcessor(RangeExceptions rangeExceptions) {
-		this.rangeExceptions = rangeExceptions;
-	}
-	public void numberProcessor(int number) {
-		try {
+     private RangeExceptions rangeExceptions;
+     private int counterGreaterMax; //how many numbers have been greater than max range
+     private int counterLessMin; //how many numbers have been less than min range
+     private int counterRange;//how many numbers have been into range
+     public RangeExceptionsProcessor(RangeExceptions rangeException) {
+    	 this.rangeExceptions = rangeException;
+     }
+     public void numberProcessor(int number) {
+    	 try {
 			rangeExceptions.checkNumber(number);
 			counterRange++;
 		} catch (NumberGreaterRangeMaxException e) {
@@ -17,7 +17,7 @@ public class RangeExceptionsProcessor {
 		} catch (NumberLessRangeMinException e) {
 			counterLessMin++;
 		}
-	}
+     }
 	public RangeExceptions getRangeExceptions() {
 		return rangeExceptions;
 	}
@@ -30,5 +30,5 @@ public class RangeExceptionsProcessor {
 	public int getCounterRange() {
 		return counterRange;
 	}
-	
+     
 }
