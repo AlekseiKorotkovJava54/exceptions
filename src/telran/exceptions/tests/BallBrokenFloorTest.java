@@ -14,7 +14,6 @@ class BallBrokenFloorTest {
 	void test() {
 		BallBrokenFloor bbf = new BallBrokenFloor(N_FLOORS);
 		assertEquals(bbf.getBrokenFloor(), getMinBrokenFloor(bbf));
-		System.out.println(bbf.getBrokenFloor());
 	}
 
 	private int getMinBrokenFloor(BallBrokenFloor bbf) {
